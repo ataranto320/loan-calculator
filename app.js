@@ -20,7 +20,7 @@ function calculateResults(e) {
 
     // compute monthly payment
     const x = Math.pow(1 + calculatedInterest. calculatedPayments);
-    const monthly = (principal * x * calculatedInterest) / (x-1);
+    const monthly = (principal*x*calculatedInterest) / (x-1);
 
     if (isFinite(monthly)) {
         monthlyPayment.value = monthly.toFixed(2);
@@ -49,4 +49,9 @@ errorDiv.appendChild(document.createTextNode(error));
 card.insertBefore(errorDiv, heading);
 // clear error after 3 secs
 setTimeout(clearError, 3000);
+}
+
+// clear error
+function clearError() {
+    document.querySelector(".alert").remove();
 }
